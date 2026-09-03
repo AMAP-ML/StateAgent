@@ -1,0 +1,57 @@
+{
+  "$defs": {
+    "EntityMemory": {
+      "type": "object",
+      "properties": {
+        "entity_id": {"type": "string"},
+        "type": {"type": "string", "enum": ["person", "object", "container", "clothing", "unknown"]},
+        "attributes": {"type": "object", "additionalProperties": {"type": "string"}},
+        "visibility": {"type": "string", "enum": ["visible", "hidden", "partially_visible"]},
+        "current_location": {"type": ["string", "null"]},
+        "open_state": {"type": "string", "enum": ["open", "closed", "n/a"]},
+        "relations": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/Relation"}
+        },
+        "appearance_image": {"type": ["string", "null"], "description": "Path to entity crop image"},
+        "size_description": {"type": ["string", "null"]},
+        "shape_description": {"type": ["string", "null"]},
+        "source_shot": {"type": ["integer", "null"]}
+      },
+      "required": ["entity_id"]
+    },
+    "Relation": {
+      "type": "object",
+      "properties": {
+        "type": {"type": "string"},
+        "subject": {"type": "string"},
+        "object": {"type": "string"},
+        "value": {"type": "boolean", "default": true}
+      },
+      "required": ["type", "subject", "object"]
+    },
+    "HistoryEvent": {
+      "type": "object",
+      "properties": {
+        "time": {"type": "integer"},
+        "description": {"type": "string"},
+        "details": {"type": "object", "additionalProperties": {"type": "string"}}
+      },
+      "required": ["time", "description"]
+    }
+  },
+  "type": "object",
+  "title": "MemoryBank",
+  "description": "Unified state memory bank — stores all entities with identity, state, and appearance.",
+  "properties": {
+    "time": {"type": "integer", "default": 0},
+    "entities": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/EntityMemory"}
+    },
+    "history": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/HistoryEvent"}
+    }
+  }
+}

@@ -1,0 +1,266 @@
+[
+  {
+    "shot_id": 1,
+    "prompt": "A single continuous realistic video on a wooden tabletop. A man stands behind the table with a small red ball, a yellow pencil, and an open blue box in front of him, all clearly visible. He picks up the red ball and drops it into the open blue box; the yellow pencil stays on the table. Fixed camera, medium shot, bright indoor lighting.",
+    "memory_snapshot": {
+      "time": 0,
+      "entities": {
+        "person_1": {
+          "entity_id": "person_1",
+          "type": "person",
+          "attributes": {},
+          "visibility": "visible",
+          "current_location": null,
+          "open_state": "n/a",
+          "relations": [],
+          "appearance_image": "outputs/red_ball_into_blue_box/frames/shot1/keyframe_00_0.7s.png",
+          "size_description": null,
+          "shape_description": null,
+          "state_description": null,
+          "source_shot": 1
+        },
+        "table_1": {
+          "entity_id": "table_1",
+          "type": "object",
+          "attributes": {
+            "material": "wooden"
+          },
+          "visibility": "visible",
+          "current_location": null,
+          "open_state": "n/a",
+          "relations": [],
+          "appearance_image": "outputs/red_ball_into_blue_box/frames/shot1/keyframe_00_0.7s.png",
+          "size_description": null,
+          "shape_description": null,
+          "state_description": null,
+          "source_shot": 1
+        },
+        "ball_1": {
+          "entity_id": "ball_1",
+          "type": "object",
+          "attributes": {
+            "color": "red",
+            "size": "small"
+          },
+          "visibility": "visible",
+          "current_location": null,
+          "open_state": "n/a",
+          "relations": [],
+          "appearance_image": "outputs/red_ball_into_blue_box/frames/shot1/keyframe_00_0.7s.png",
+          "size_description": null,
+          "shape_description": null,
+          "state_description": null,
+          "source_shot": 1
+        },
+        "pencil_1": {
+          "entity_id": "pencil_1",
+          "type": "object",
+          "attributes": {
+            "color": "yellow"
+          },
+          "visibility": "visible",
+          "current_location": null,
+          "open_state": "n/a",
+          "relations": [],
+          "appearance_image": "outputs/red_ball_into_blue_box/frames/shot1/keyframe_00_0.7s.png",
+          "size_description": null,
+          "shape_description": null,
+          "state_description": null,
+          "source_shot": 1
+        },
+        "box_1": {
+          "entity_id": "box_1",
+          "type": "container",
+          "attributes": {
+            "color": "blue",
+            "state": "open"
+          },
+          "visibility": "visible",
+          "current_location": null,
+          "open_state": "n/a",
+          "relations": [],
+          "appearance_image": "outputs/red_ball_into_blue_box/frames/shot1/keyframe_00_0.7s.png",
+          "size_description": null,
+          "shape_description": null,
+          "state_description": null,
+          "source_shot": 1
+        }
+      },
+      "history": []
+    },
+    "image_prompt": "A single continuous realistic video on a wooden tabletop. A man stands behind the table with a small red ball, a yellow pencil, and an open blue box in front of him, all clearly visible. He picks up the red ball and drops it into the open blue box; the yellow pencil stays on the table. Fixed camera, medium shot, bright indoor lighting.",
+    "reference_images": [],
+    "generated_end_frame": "statebench/data/red_ball_into_blue_box/shot1_endframe.png",
+    "generated_video": "statebench/data/red_ball_into_blue_box/shot1.mp4",
+    "verification": {
+      "ses": "skip",
+      "scs": "skip",
+      "identity": "skip",
+      "visibility": "skip",
+      "forbidden": "skip",
+      "failure_reason": ""
+    }
+  },
+  {
+    "shot_id": 2,
+    "prompt": "A single continuous realistic video on a wooden tabletop. The man tilts the blue box toward the camera to show what is inside. Fixed camera, medium shot, bright indoor lighting.",
+    "memory_snapshot": {
+      "time": 1,
+      "entities": {
+        "person_1": {
+          "entity_id": "person_1",
+          "type": "person",
+          "attributes": {
+            "color": "dark blue",
+            "material": "fabric",
+            "shape": "human torso and arms",
+            "size": "upper body visible"
+          },
+          "visibility": "visible",
+          "current_location": null,
+          "open_state": "n/a",
+          "relations": [
+            {
+              "type": "holding",
+              "subject": "person_1",
+              "object": "box_1",
+              "value": true
+            }
+          ],
+          "appearance_image": "outputs/red_ball_into_blue_box/frames/shot2/keyframe_00_0.7s.png",
+          "size_description": "upper body visible",
+          "shape_description": "human torso and arms",
+          "state_description": "standing behind the table with hands near the box, not holding any object",
+          "source_shot": 1
+        },
+        "table_1": {
+          "entity_id": "table_1",
+          "type": "object",
+          "attributes": {
+            "material": "wooden",
+            "color": "light brown",
+            "shape": "rectangular tabletop",
+            "size": "large flat surface"
+          },
+          "visibility": "visible",
+          "current_location": null,
+          "open_state": "n/a",
+          "relations": [
+            {
+              "type": "on_top_of",
+              "subject": "pencil_1",
+              "object": "table_1",
+              "value": true
+            }
+          ],
+          "appearance_image": "outputs/red_ball_into_blue_box/frames/shot2/keyframe_00_0.7s.png",
+          "size_description": "large flat surface",
+          "shape_description": "rectangular tabletop",
+          "state_description": "supporting a yellow pencil and an open blue box",
+          "source_shot": 1
+        },
+        "ball_1": {
+          "entity_id": "ball_1",
+          "type": "object",
+          "attributes": {
+            "color": "red",
+            "size": "small",
+            "material": "unknown",
+            "shape": "sphere"
+          },
+          "visibility": "visible",
+          "current_location": "inside:box_1",
+          "open_state": "n/a",
+          "relations": [
+            {
+              "type": "inside",
+              "subject": "ball_1",
+              "object": "box_1",
+              "value": true
+            }
+          ],
+          "appearance_image": "outputs/red_ball_into_blue_box/frames/shot2/keyframe_02_2.1s.png",
+          "size_description": "small spherical object",
+          "shape_description": "sphere",
+          "state_description": "inside the open blue box, not visible in the frame",
+          "source_shot": 1
+        },
+        "pencil_1": {
+          "entity_id": "pencil_1",
+          "type": "object",
+          "attributes": {
+            "color": "yellow",
+            "tip_color": "pink",
+            "material": "wood",
+            "shape": "cylindrical with pointed tip",
+            "size": "standard writing instrument length"
+          },
+          "visibility": "visible",
+          "current_location": null,
+          "open_state": "n/a",
+          "relations": [
+            {
+              "type": "on_top_of",
+              "subject": "pencil_1",
+              "object": "table_1",
+              "value": true
+            }
+          ],
+          "appearance_image": "outputs/red_ball_into_blue_box/frames/shot2/keyframe_00_0.7s.png",
+          "size_description": "standard writing instrument length",
+          "shape_description": "cylindrical with pointed tip",
+          "state_description": "lying horizontally on the wooden table, untouched",
+          "source_shot": 1
+        },
+        "box_1": {
+          "entity_id": "box_1",
+          "type": "container",
+          "attributes": {
+            "color": "blue",
+            "material": "cardboard",
+            "shape": "rectangular prism with open top",
+            "size": "medium-sized rectangular container"
+          },
+          "visibility": "visible",
+          "current_location": "holding:person_1",
+          "open_state": "open",
+          "relations": [
+            {
+              "type": "holding",
+              "subject": "person_1",
+              "object": "box_1",
+              "value": true
+            },
+            {
+              "type": "inside",
+              "subject": "ball_1",
+              "object": "box_1",
+              "value": true
+            }
+          ],
+          "appearance_image": "outputs/red_ball_into_blue_box/frames/shot2/keyframe_00_0.7s.png",
+          "size_description": "medium-sized rectangular container",
+          "shape_description": "rectangular prism with open top",
+          "state_description": "open and empty-looking from outside, but logically contains the red ball based on action sequence",
+          "source_shot": 1
+        }
+      },
+      "history": []
+    },
+    "image_prompt": "The person is now holding the blue box with both hands, tilting it forward toward the camera to reveal its interior. Inside the tilted box, the red sphere from \u56fe1 is clearly visible resting at the bottom. The yellow pencil remains lying horizontally on the wooden table in the same position as in \u56fe2. The background, lighting, and tabletop remain unchanged from \u56fe2.",
+    "reference_images": [
+      "outputs/red_ball_into_blue_box/frames/shot1/keyframe_00_0.7s.png",
+      "outputs/red_ball_into_blue_box/frames/shot2_select/keyframe_05_4.3s.png"
+    ],
+    "generated_end_frame": "outputs/red_ball_into_blue_box/shot2_endframe.png",
+    "generated_video": "outputs/red_ball_into_blue_box/02.mp4",
+    "verification": {
+      "ses": "skip",
+      "scs": "pass",
+      "identity": "pass",
+      "visibility": "pass",
+      "forbidden": "skip",
+      "failure_reason": ""
+    }
+  }
+]

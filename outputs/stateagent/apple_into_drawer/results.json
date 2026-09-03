@@ -1,0 +1,106 @@
+{
+  "shot_id": 2,
+  "prompt": "Realistic, natural speed, handheld camera feel. A hand reaches over, pulls the drawer open, and the camera looks inside.",
+  "memory_snapshot": {
+    "time": 2,
+    "entities": {
+      "apple_1": {
+        "entity_id": "apple_1",
+        "type": "object",
+        "attributes": {
+          "color": "red"
+        },
+        "visibility": "visible",
+        "current_location": "inside:drawer_1",
+        "open_state": "n/a",
+        "relations": [
+          {
+            "type": "inside",
+            "subject": "apple_1",
+            "object": "drawer_1",
+            "value": true
+          }
+        ],
+        "appearance_image": "outputs/stateagent/apple_into_drawer/frames/shot2/keyframe_00_0.7s.png",
+        "size_description": "standard apple size",
+        "shape_description": "round, typical apple shape",
+        "state_description": "Red apple is partially visible inside the drawer, resting on the bottom surface.",
+        "source_shot": 1
+      },
+      "table_1": {
+        "entity_id": "table_1",
+        "type": "object",
+        "attributes": {
+          "material": "wooden"
+        },
+        "visibility": "visible",
+        "current_location": "none",
+        "open_state": "n/a",
+        "relations": [],
+        "appearance_image": "outputs/stateagent/apple_into_drawer/frames/shot2/keyframe_00_0.7s.png",
+        "size_description": "large wooden table surface",
+        "shape_description": "flat rectangular surface",
+        "state_description": "Wooden table with smooth surface, serving as the base for the drawer unit.",
+        "source_shot": 1
+      },
+      "person_1": {
+        "entity_id": "person_1",
+        "type": "person",
+        "attributes": {},
+        "visibility": "partially_visible",
+        "current_location": "none",
+        "open_state": "n/a",
+        "relations": [
+          {
+            "type": "holding",
+            "subject": "person_1",
+            "object": "drawer_1",
+            "value": true
+          }
+        ],
+        "appearance_image": "outputs/stateagent/apple_into_drawer/frames/shot2/keyframe_00_0.7s.png",
+        "size_description": "adult human hands and forearms visible",
+        "shape_description": "human hands and arms in motion",
+        "state_description": "Person's hands are actively pushing the drawer closed; fingers gripping the drawer handle.",
+        "source_shot": 1
+      },
+      "drawer_1": {
+        "entity_id": "drawer_1",
+        "type": "container",
+        "attributes": {
+          "material": "wooden"
+        },
+        "visibility": "visible",
+        "current_location": "on_top_of:table_1",
+        "open_state": "open",
+        "relations": [
+          {
+            "type": "on_top_of",
+            "subject": "drawer_1",
+            "object": "table_1",
+            "value": true
+          }
+        ],
+        "appearance_image": "outputs/stateagent/apple_into_drawer/frames/shot2/keyframe_00_0.7s.png",
+        "size_description": "medium-sized wooden drawer",
+        "shape_description": "rectangular box with front panel and handle",
+        "state_description": "Drawer is being pushed shut by person\u2019s hand; contains red apple inside; mostly closed but not fully latched yet.",
+        "source_shot": 1
+      }
+    },
+    "history": []
+  },
+  "image_prompt": "The camera has shifted to look directly into the now fully open drawer. The red apple, matching the appearance in Image 1, is resting clearly on the bottom surface of the wooden drawer interior. A hand is gripping the front edge or handle of the drawer, holding it open. The surrounding wooden table surface and the background kitchen elements remain visible but are now framed from this lower, inward-looking perspective focused on the drawer's contents.",
+  "reference_images": [
+    "outputs/stateagent/apple_into_drawer/frames/shot1/keyframe_00_0.7s.png",
+    "outputs/stateagent/apple_into_drawer/frames/shot2_select/keyframe_04_3.6s.png"
+  ],
+  "generated_end_frame": "outputs/stateagent/apple_into_drawer/shot2_endframe.png",
+  "generated_video": "outputs/stateagent/apple_into_drawer/02.mp4",
+  "verification": {
+    "scs": "pass",
+    "identity": "pass",
+    "visibility": "pass",
+    "failure_reason": ""
+  }
+}

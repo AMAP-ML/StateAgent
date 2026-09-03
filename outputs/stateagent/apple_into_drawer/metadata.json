@@ -1,0 +1,53 @@
+{
+  "id": "apple_into_drawer",
+  "difficulty": "past_visible",
+  "expected_state": "The drawer contains a red apple.",
+  "checklist": {
+    "reveal_achieved": {
+      "question": "Is the drawer pulled open with its interior visible?",
+      "reference_frame_ids": []
+    },
+    "state_correct": [
+      {
+        "question": "Does the revealed final state match the intended state: The drawer contains a red apple?",
+        "reference_frame_ids": []
+      },
+      {
+        "question": "Does the revealed target/state (The drawer contains a red apple) match the same object, person, text, mark, liquid, count, position, identity, and relevant attributes shown in the historical reference frames?",
+        "reference_frame_ids": [
+          "ref_history_start",
+          "ref_history_action"
+        ]
+      },
+      {
+        "question": "Does the revealed container, surface, room, person, or local scene remain consistent with the historical reference frames, except for the intended state change caused by the described action?",
+        "reference_frame_ids": [
+          "ref_history_start",
+          "ref_pre_reveal"
+        ]
+      }
+    ],
+    "no_violation": [
+      {
+        "question": "Are there no extra objects, duplicated targets, unsupported marks/text, changed attributes, or impossible contents in the revealed area that are absent from the historical reference frames and not introduced by the described action?",
+        "reference_frame_ids": [
+          "ref_history_start",
+          "ref_history_action",
+          "ref_pre_reveal"
+        ]
+      },
+      {
+        "question": "Does the reveal avoid hallucinated changes to the container/interior/background/person that would contradict the historical reference frames?",
+        "reference_frame_ids": [
+          "ref_history_start",
+          "ref_pre_reveal"
+        ]
+      }
+    ]
+  },
+  "videos": [
+    "outputs/stateagent/apple_into_drawer/shot1.mp4",
+    "outputs/stateagent/apple_into_drawer/02.mp4"
+  ],
+  "combined": "outputs/stateagent/apple_into_drawer/combined.mp4"
+}

@@ -1,0 +1,41 @@
+# StateAgent Default Configuration
+# Environment variables DASHSCOPE_API_KEY, VLM_KEY, VLM_MODEL override these settings.
+
+# LLM/VLM Settings (Alibaba Cloud Bailian Qwen)
+vlm_model: "qwen3.5-plus"        # VLM for state reasoning
+vlm_temperature: 0.1
+
+# Video Generation Models (Alibaba Cloud Bailian Wan)
+text2video_model: "wan2.2-t2v-plus"    # Shot 1: text-to-video
+kf2v_model: "wan2.2-kf2v-flash"        # Shot 2+: keyframe-to-video
+i2v_model: "wan2.2-i2v-plus"           # Ablation: image-to-video
+image_model: "wan2.7-image"            # Shot 2+: image generation with refs
+
+# Resolution (all use 480P = 832x480, 16:9 aspect ratio)
+video_size: "832*480"                   # 480P for video generation
+image_size: "1K"                        # wan2.7-image uses 1K/2K format
+image_target_size: "832*480"            # Resize to 480P for consistency
+
+# Pipeline Mode
+# "full" — with verification after each shot
+# "fast" — skip verification
+baseline_mode: "full"
+
+# Verifier Settings
+verifier_checks:
+  - scs
+  - identity
+  - visibility
+
+# Frame Selector — VLM selects best base frame from video history
+frame_selector:
+  enabled: true
+  num_candidates: 6
+
+# Edit Verifier — verify edited frame, retry with refined prompt if failed
+edit_verifier:
+  enabled: true
+  max_retries: 2
+
+# Output Settings
+output_dir: "outputs"
