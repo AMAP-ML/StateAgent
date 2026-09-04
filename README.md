@@ -1,11 +1,12 @@
-<div align="center">
+<h1 align="center">Do Video Generators Track the World Across Segments? A Benchmark and Method for World-State Reasoning in Video Continuation</h1>
 
-# Do Video Generators Track the World Across Segments? A Benchmark and Method for World-State Reasoning in Video Continuation
-
-[![arXiv](https://img.shields.io/badge/arXiv-2609.03673-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2609.03673)
-[![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-StateBench-FFD21E?style=for-the-badge)](https://huggingface.co/datasets/moore12138/StateBench)
-
+<p align="center">
+  <a href="https://arxiv.org/abs/2609.03673"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b" alt="Paper"/></a>
+  <a href="https://huggingface.co/datasets/moore12138/StateBench"><img src="https://img.shields.io/badge/Dataset-HuggingFace-ffd21e" alt="Dataset"/></a>
+</p>
 </div>
+
+## 📖 Overview
 
 Video generators build long videos by composing shorter parts, either by generating segments one after another or by autoregressively extending chunks. Each new part usually depends on memories of historical observations, such as recent frames, selected key frames, memory banks, or cached features. These memories preserve visible evidence from the past, but current generators do not reliably turn such evidence into a world-state interface: what holds in the video world after previous actions and how it should change under the next prompt. A past frame remains valid history, but it may not describe the state needed by the next segment; some states must instead be inferred from occluded or implicit changes rather than copied from a directly observed frame. This creates a simple but overlooked question for video continuation: given a previous video, its prompt, and a new prompt, can a model generate a continuation that reflects the state determined by both the historical video and the new prompt? To answer this question, we introduce StateBench, a benchmark that targets this gap by testing continuations over three state categories: past-visible states, occluded-process states, and complex-transition states. We further propose StateAgent, which explicitly maintains an entity-state representation, updates it under the new prompt, grounds the predicted post-action state as a future end frame, and renders the next video. Experiments show that our method improves controlled video continuation by raising the all-case state score (SCS-All) from 45.2 to 69.3, and also benefits story generation at the one-minute scale.
 
