@@ -1,5 +1,5 @@
 <h2 align="center">
-  <a href="https://arxiv.org/abs/">
+  <a href="https://arxiv.org/abs/2609.03673">
     Do Video Generators Track the World Across Segments? A Benchmark and Method for World-State Reasoning in Video Continuation
   </a>
 </h2>
@@ -105,8 +105,10 @@ python statebench/eval/evaluate.py --video-dir outputs/stateagent
 ## ✏️ Citation
 
 ```
-@article{stateagent2026,
-  title={StateAgent: Cross-Segment Video Continuation via State Tracking},
-  year={2026}
+@article{miao2026stateagent,
+      title={Do Video Generators Track the World Across Segments? A Benchmark and Method for World-State Reasoning in Video Continuation}, 
+      author={Yingmao Miao and Pengfei Zhang and Chaoran Xu and Meng Yu and Jing Tang and Xiangxiang Chu and Chao Shen and Chenhao Lin},
+      journal={arXiv preprint arXiv:2609.03673},
+      year={2026},
 }
 ```
